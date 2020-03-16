@@ -1,6 +1,5 @@
 from PIL import Image, ImageGrab, ImageOps
 import pytesseract
-import time
 import datetime
 import pynput.mouse    as ms
 import pynput.keyboard as kb
@@ -11,7 +10,7 @@ keyboard = Controller()
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 class AutoTyper:
-
+    
     clickCount = 0
     pCords = [0,0,0,0]
     defined = False
@@ -40,6 +39,7 @@ class AutoTyper:
         with ms.Listener(on_click = on_click) as listener:
             listener.join()
 
+
     def keyPress():
 
         print('Press UP ARROW to select OCR region')
@@ -60,6 +60,7 @@ class AutoTyper:
 
         with kb.Listener(on_press = on_press, on_release = on_release) as listener:
             listener.join()
+
 
     def startTyping(delayTime: float):
 
@@ -92,6 +93,8 @@ class AutoTyper:
             
             paraString = pytesseract.image_to_string(AutoTyper.pImage)
             length = len(paraString)
+
+            # Character replacement to make outpur more accurate
             paraString = paraString.replace('|','I')
             paraString = paraString.replace('\n',' ')
   
