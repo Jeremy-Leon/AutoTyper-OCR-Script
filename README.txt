@@ -20,8 +20,8 @@ How to use:
 Once you run the script, you will run the 'start()' function that takes a float value which represents the interval between charaters you would like.
 
 Example:
-	Start(1.0) -> will type a character every 1 second
-	Start(0.1) -> will type a character every 1/10th second
+	start(1.0) -> will type a character every 1 second
+	start(0.1) -> will type a character every 1/10th second
 
 The script will then prompt you to press the UP ARROW key to select the region of text you want to be typed. To select the region, you will click on the TOP LEFT corner of the region first, followed by the BOTTOM RIGHT coner of the region. Ensure the region contains all the text and doesn't contain anything it doesn't need to.
 

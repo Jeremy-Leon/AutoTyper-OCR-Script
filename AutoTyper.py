@@ -10,7 +10,7 @@ keyboard = Controller()
 
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
-class OCR:
+class AutoTyper:
 
     clickCount = 0
     pCords = [0,0,0,0]
@@ -25,17 +25,17 @@ class OCR:
             
             if pressed:
                 print ('Mouse clicked at ({0}, {1}) with {2}'.format(x, y, button))
-                if OCR.clickCount == 0:
-                    OCR.pCords[0] = x
-                    OCR.pCords[1] = y
-                elif OCR.clickCount == 1:
-                    OCR.pCords[2] = x
-                    OCR.pCords[3] = y
-                    OCR.defined = True
+                if AutoTyper.clickCount == 0:
+                    AutoTyper.pCords[0] = x
+                    AutoTyper.pCords[1] = y
+                elif AutoTyper.clickCount == 1:
+                    AutoTyper.pCords[2] = x
+                    AutoTyper.pCords[3] = y
+                    AutoTyper.defined = True
                     print('')
-                    OCR.clickCount = 0
+                    AutoTyper.clickCount = 0
                     return False
-                OCR.clickCount += 1
+                AutoTyper.clickCount += 1
                 
         with ms.Listener(on_click = on_click) as listener:
             listener.join()
@@ -53,8 +53,8 @@ class OCR:
                 return False
             elif key == Key.up:
                 print('UP arrow pressed\n')
-                OCR.areaSelect()
-                OCR.capture()
+                AutoTyper.areaSelect()
+                AutoTyper.capture()
                 
                 return False
 
@@ -74,7 +74,7 @@ class OCR:
                 return False
             elif key == Key.down:
                 print('DOWN arrow pressed\n')
-                OCR.output(delayTime)
+                AutoTyper.output(delayTime)
                 return False
 
         with kb.Listener(on_press = on_press, on_release = on_release) as listener:
@@ -83,14 +83,14 @@ class OCR:
 
     def capture():
         
-        if OCR.defined:
-            OCR.pImage = ImageGrab.grab(bbox = (OCR.pCords[0],OCR.pCords[1],OCR.pCords[2],OCR.pCords[3]))
+        if AutoTyper.defined:
+            AutoTyper.pImage = ImageGrab.grab(bbox = (AutoTyper.pCords[0],AutoTyper.pCords[1],AutoTyper.pCords[2],AutoTyper.pCords[3]))
         else:
             print('please define an area to OCR before trying to print')
             
     def output(delayTime: float):
             
-            paraString = pytesseract.image_to_string(OCR.pImage)
+            paraString = pytesseract.image_to_string(AutoTyper.pImage)
             length = len(paraString)
             paraString = paraString.replace('|','I')
             paraString = paraString.replace('\n',' ')
@@ -106,8 +106,8 @@ class OCR:
 def start(delayTime: float):
     
     print('Time interal between chars:',delayTime)
-    OCR.keyPress()
-    OCR.startTyping(delayTime)
+    AutoTyper.keyPress()
+    AutoTyper.startTyping(delayTime)
     
 
 
