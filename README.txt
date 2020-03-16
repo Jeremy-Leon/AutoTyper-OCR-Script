@@ -3,7 +3,7 @@ This is a Python script that takes an input image of text and types the text for
 
 NOTE:
 I do not condone using this script to cheat on TypeRacer or anything of the like.
-Over 100 words per minute type racer makes you take an anti-cheat test that this script cannot pass.
+Over 100 words per minute TypeRacer makes you take an anti-cheat test that this script cannot pass.
 
 This is simply a personal project to get more familiar with Python, OCR, and input listeners. Use at your own risk.
 
@@ -23,7 +23,7 @@ Example:
 	Start(1.0) -> will type a character every 1 second
 	Start(0.1) -> will type a character every 1/10th second
 
-The script will then prompt you teo press the UP ARROW key to select the region of text you with to be typed. To select the region you will click on the TOP LEFT corner of the region first, followed by the BOTTOM LEFT coner of the region. Ensure the region contains all the text and doesnt contain anything it doesnt need to.
+The script will then prompt you to press the UP ARROW key to select the region of text you want to be typed. To select the region, you will click on the TOP LEFT corner of the region first, followed by the BOTTOM RIGHT coner of the region. Ensure the region contains all the text and doesn't contain anything it doesn't need to.
 
 The script will then promp you to press the DOWN ARROW key to being the typing, once your cursor is in the appropriate field press the down arrow key.
 
