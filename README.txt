@@ -5,7 +5,7 @@ NOTE:
   I do not condone using this script to cheat on TypeRacer or anything of the like.
   Over 100 words per minute TypeRacer makes you take an anti-cheat test that this script cannot pass.
 
-This is simply a personal project to get more familiar with Python, OCR, and input listeners. Use at your own risk.
+  This is simply a personal project to get more familiar with Python, OCR, and input listeners. Use at your own risk.
 
 
 How it works:
