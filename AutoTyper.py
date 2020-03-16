@@ -1,6 +1,6 @@
 from PIL import Image, ImageGrab, ImageOps
 import pytesseract
-import datetime
+import time
 import pynput.mouse    as ms
 import pynput.keyboard as kb
 from pynput.keyboard import Key, Controller
